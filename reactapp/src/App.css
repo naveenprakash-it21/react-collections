@@ -1,0 +1,109 @@
+/* Center the form container */
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 50px;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Center heading */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f8fafc;
+  }
+  
+  /* Form layout */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels & Fieldsets */
+  label,
+  fieldset {
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  
+  /* Input Fields */
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 2px solid #64748b;
+    border-radius: 8px;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Input Focus Effect */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 5px rgba(14, 165, 233, 0.6);
+  }
+  
+  /* Fieldset Styling */
+  fieldset {
+    border: 2px solid #64748b;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Styling Checkboxes & Radio Buttons */
+  input[type="radio"],
+  input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    accent-color: #0ea5e9;
+  }
+  
+  /* File Upload */
+  input[type="file"] {
+    padding: 5px;
+  }
+  
+  /* Range Slider */
+  input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  /* Submit Button */
+  button {
+    margin-top: 15px;
+    padding: 12px;
+    background: #0ea5e9;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  button:hover {
+    background: #0284c7;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .form-container {
+      max-width: 90%;
+      padding: 20px;
+    }
+  }
+  

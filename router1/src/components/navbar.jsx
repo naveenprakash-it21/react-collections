@@ -1,5 +1,5 @@
 import {NavLink,useNavigate} from "react-router-dom"
-import "./navbar.css";
+import "../App.css";
 const Navbar = () => {
     const navigate=useNavigate();
   return (
@@ -18,6 +18,9 @@ const Navbar = () => {
         <NavLink to="/contact">
             <li>Contact</li>
         </NavLink>
+        <NavLink to="/user">
+            <li>Users</li>
+        </NavLink>
     </ul>
     <button onClick={()=>navigate("/Dashboard", {replace:true})}>Login</button>
     </div>
@@ -26,5 +29,5 @@ const Navbar = () => {
 
 export default Navbar
 
-// NavLink - active page
-
+// NavLink - active page.
+// navigate - without refreshing the page.

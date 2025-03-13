@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom'
+import {Link, useLoaderData } from 'react-router-dom'
 import "../App.css";
 const Users = () => {
     const users =useLoaderData();
@@ -7,10 +7,13 @@ const Users = () => {
       <div className="users">
       {users.map((user)=>{
         return (
-        <div key={user.id} className="user">
+        <Link to ={user.id.toString()} key={user.id}>
+          <div className="user">
             <h3>{user.name}</h3>
             <p>{user.email}</p>
-        </div>
+          </div>
+        </Link>  
+        
         );
       })}
     </div>

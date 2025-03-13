@@ -10,6 +10,7 @@ import ContactLayout from "./layout/contactLayout";
 import NotFound from "./pages/notfound";
 import UserLayout from "./layout/userLayout";
 import User from "./pages/users";
+import Users from "./components/user"
 import { UserLoader } from "./utils/userloader";
 import "./App.css";
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="user" element={<UserLayout />}>
         <Route index element={<User />}  loader={UserLoader}/>
+        <Route path=":id" element={<Users/>}/>
       </Route>
       <Route path="*" element={<NotFound />} />
     </Route>

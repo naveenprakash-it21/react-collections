@@ -1,0 +1,19 @@
+{
+  "products": [
+    { "id": 1, "name": "Laptop", "price": 1000 },
+    { "id": 2, "name": "Smartphone", "price": 500 },
+    { "id": 3, "name": "Tablet", "price": 300 },
+    { "id": 4, "name": "Smartwatch", "price": 200 },
+    { "id": 5, "name": "Headphones", "price": 150 },
+    { "id": 6, "name": "Wireless Mouse", "price": 50 },
+    { "id": 7, "name": "Mechanical Keyboard", "price": 120 },
+    { "id": 8, "name": "Gaming Monitor", "price": 700 },
+    { "id": 9, "name": "External Hard Drive", "price": 80 },
+    { "id": 10, "name": "Bluetooth Speaker", "price": 100 },
+    { "id": 11, "name": "Webcam", "price": 190 },
+    { "id": 12, "name": "VR Headset", "price": 400 },
+    { "id": 13, "name": "Graphics Tablet", "price": 250 },
+    { "id": 14, "name": "Portable Charger", "price": 60 },
+    { "id": 15, "name": "Smart Home Hub", "price": 180 }
+  ]
+}

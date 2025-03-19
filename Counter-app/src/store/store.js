@@ -2,15 +2,12 @@
 // CENTRALIZED STATE STORAGE
 
 import {configureStore} from "@reduxjs/toolkit"; // Create redux store
-import counterReducer from "../counterSlice"
+import CounterReducer from "../counterSlice"
 
-const store  =configureStore({
-
+const storage  = configureStore({
     reducer:{
-      counter :counterReducer,
-      
+      counter :CounterReducer,
     },
 });
 
-export default store;
-
+export default storage;

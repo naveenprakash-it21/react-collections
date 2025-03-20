@@ -14,7 +14,7 @@ const initialState = {
   error: null,
 };
 
-const userSlice = createReducer(initialState, (builder) => {
+const userSlice = createReducer(initialState, (builder) => { // removing the switch case
   builder
     .addCase(fetchUsersStart, (state) => {
       state.loading = true;
@@ -29,14 +29,16 @@ const userSlice = createReducer(initialState, (builder) => {
       state.loading = false;
     })
     .addCase(deleteUserAction, (state, action) => {
-      state.users = state.users.filter((user) => user.login.uuid !== action.payload);
+      //Only users not matching the uuid remain.
+      state.users = state.users.filter((user) => user.login.uuid !== action.payload); // uuid (Unique user ID);
+      //holds the currently displayed users
       state.filteredUsers = state.filteredUsers.filter((user) => user.login.uuid !== action.payload);
     })
     .addCase(filterUsers, (state, action) => {
-      if (action.payload) {
+      if (action.payload) { // male or female
         state.filteredUsers = state.users.filter((user) => user.gender === action.payload);
       } else {
-        state.filteredUsers = state.users;
+        state.filteredUsers = state.users; // all api
       }
     });
 });

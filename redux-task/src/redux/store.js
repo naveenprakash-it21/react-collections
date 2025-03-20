@@ -9,5 +9,5 @@ const store = configureStore({ //Built-in middleware.
 
 export default store;
 
-
 // reducer -> an obj where we define slices of state
+

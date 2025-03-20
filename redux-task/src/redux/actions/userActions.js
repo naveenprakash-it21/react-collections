@@ -10,7 +10,7 @@ export const filterUsers = createAction("users/filterUsers");
 export const fetchUsers = () => async (dispatch) => {
   dispatch(fetchUsersStart()); // Triggers loading state.
   try {
-    const response = await axios.get("https://randomuser.me/api/?results=20");
+    const response = await axios.get("https:/randomuser.me/api/?results=10");
     dispatch(fetchUsersSuccess(response.data.results)); // Updating Redux state
   } catch (error) {
     dispatch(fetchUsersFailure(error.message));

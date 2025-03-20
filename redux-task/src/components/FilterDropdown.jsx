@@ -11,11 +11,14 @@ const FilterDropdown = () => {
   };
 
   return (
-    <select onChange={handleFilter} className="filter-dropdown">
-      <option value="">All</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
+    <div className="filter-container">
+      <label htmlFor="gender-filter" className="filter-label">Filter by Gender:</label>
+      <select id="gender-filter" onChange={handleFilter} className="filter-dropdown">
+        <option value="">All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
   );
 };
 

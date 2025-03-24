@@ -20,4 +20,3 @@ export const fetchUsers = () => async (dispatch) => {
 export const deleteUser = (id) => (dispatch) => {
   dispatch(deleteUserAction(id));
 };
-

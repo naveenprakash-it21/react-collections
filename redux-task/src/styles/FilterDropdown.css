@@ -10,16 +10,21 @@
 .filter-label {
     font-size: 16px;
     font-weight: 600;
-    color: #060606;
+    color: #fbfbfb;
 }
 
 /* Filter Dropdown */
 .filter-dropdown {
     padding: 5px;
-    border: 2px solid #ddd;
+    border: 2px solid #807171;
+    color: black;
     border-radius: 10px;
     font-size: 16px;
     background-color: white;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+}
+
+.filter-dropdown:hover {
+    border-color: #00c3ff;
 }

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
@@ -46,5 +47,5 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "json-server": "^1.0.0-beta.3"
-  } 
+  }
 }

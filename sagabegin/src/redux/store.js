@@ -10,8 +10,10 @@ import createSagaMiddle from '@redux-saga/core';
 
 const sagaMiddleware = createSagaMiddle();
 const store = configureStore({
-  reducer: rootReducer, // rootReducer replaces individual reducers
-  middleware: () => [sagaMiddleware] // maybe more than one middleware
+  reducer: rootReducer, 
+  // rootReducer replaces individual reducers
+  middleware: () => [sagaMiddleware] 
+  // maybe more than one middleware
 });
 
 sagaMiddleware.run(productSaga)

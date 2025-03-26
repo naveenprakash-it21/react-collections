@@ -1,10 +1,15 @@
-import { PRODUCT_LIST } from "../constant/constant";
+import { PRODUCT_LIST, SEARCH_PRODUCT } from "../constant/constant";
 
-const productList = () => { 
-    let productnewdata ="hello";
+const productList = () => {
     return {
-        type: PRODUCT_LIST,
-        productnewdata
+        type: PRODUCT_LIST, //calling reducer and saga
+    }
+}
+
+export const productSearch = (query) => {
+    return {
+        type: SEARCH_PRODUCT, //calling reducer and saga
+        payload: query,
     }
 }
 

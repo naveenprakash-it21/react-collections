@@ -1,6 +1,5 @@
 import { ADD_To_CART, REMOVE_To_CART, EMPTYCART } from "../constant/constant";
 
-
 export const addToCart = (productdata) => {
     //console.log ("addCart is called",productdata);
     return {
@@ -9,11 +8,10 @@ export const addToCart = (productdata) => {
     }
 }
 
-export const removeToCart = (productdata) => {
-    //console.log ("RemoveCart is called",productdata);
+export const removeToCart = (product) => {
     return {
-        type: REMOVE_To_CART,
-        productdata
+        type: REMOVE_To_CART, //identifies the action being dispatched
+        data: product, // Ensure product object is passed
     }
 }
 

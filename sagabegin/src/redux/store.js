@@ -1,21 +1,19 @@
-// import {createStore} from 'redux';
-// import rootReducer from './rootReducer';
-// const store = createStore(rootReducer); //function come from reducer or rootReducer
-// export default store;
-
 import { configureStore } from "@reduxjs/toolkit";
+import createSagaMiddleware from "@redux-saga/core";
 import rootReducer from "./rootReducer";
-import productSaga from '../redux/saga/productSaga';
-import createSagaMiddle from '@redux-saga/core';
+import productSaga from "../redux/saga/productSaga";
 
-const sagaMiddleware = createSagaMiddle();
+// Create Saga middleware
+const sagaMiddleware = createSagaMiddleware();
+
+// Configure store
 const store = configureStore({
-  reducer: rootReducer, 
-  // rootReducer replaces individual reducers
-  middleware: () => [sagaMiddleware] 
-  // maybe more than one middleware
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false, thunk: false }).concat(sagaMiddleware),
 });
 
-sagaMiddleware.run(productSaga)
+// Run saga middleware
+sagaMiddleware.run(productSaga);
 
 export default store;

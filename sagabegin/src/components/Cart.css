@@ -54,6 +54,15 @@ button:hover {
   border-radius: 10px;
 }
 
+.dark-mode .empty-cart-btn {
+  background: #e12821;
+  color: white;
+  font-size: 16px;
+  padding: 12px 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
 /* Table Container */
 .table-container {
   width: 100%;
@@ -92,7 +101,7 @@ td {
 
 /* Add Hover Effect */
 tr:hover {
-  background: #726969;
+  background: #cfc7c7;
 }
 
 /* Fix Column Widths */
@@ -123,6 +132,16 @@ th:nth-child(5), td:nth-child(5) { width: 20%; }  /* Total */
   color: white;
 }
 
+.dark-mode .plus-btn {
+  background: #28a745;
+  color: white;
+}
+
+.dark-mode .minus-btn {
+  background: #dc3545;
+  color: white;
+}
+
 .plus-btn:hover, .minus-btn:hover {
   transform: scale(1.1);
 }
@@ -142,6 +161,7 @@ th:nth-child(5), td:nth-child(5) { width: 20%; }  /* Total */
 }
 
 .cart-summary p {
+  color:#090909;
   margin: 12px 0;
   display: flex;
   justify-content: space-between;
@@ -187,17 +207,21 @@ th:nth-child(5), td:nth-child(5) { width: 20%; }  /* Total */
   color: white;
 }
 
+.dark-mode tr:hover {
+  background: #514d4d;
+}
+
 .dark-mode .cart-summary {
-  background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
-  color: white;
+  background: linear-gradient(135deg, #d8caca, #d6cdcd);
+  color: rgb(40, 38, 38);
 }
 
 .dark-mode .cart-summary p {
-  color: white;
+  color: rgb(8, 8, 8);
 }
 
 .dark-mode .cart-summary h3 {
-  background: rgb(131, 124, 124);
+  background: rgb(71, 70, 70);
   color: #ffcc00;
   box-shadow: inset 0 -2px 6px rgba(255, 255, 255, 0.2);
 }
@@ -216,7 +240,7 @@ th:nth-child(5), td:nth-child(5) { width: 20%; }  /* Total */
 .dark-mode .cart-container {
   background-color: black; /* Dark Mode Background */
   color: white; /* Dark Mode Text */
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(214, 196, 196, 0.1);
 }
 
 /* Table Styling */
@@ -251,4 +275,32 @@ th:nth-child(5), td:nth-child(5) { width: 20%; }  /* Total */
   width: 100px; /* Adjust image size */
   height: 100px;
   text-align: center;
+}
+
+.cartpagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  gap:25px;
+}
+
+.cartpagination__link {
+  padding: 8px 12px;
+  margin: 5px;
+  border: 1px solid #007bff;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cartpagination__link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.cartpagination__link--active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
 }

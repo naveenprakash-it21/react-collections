@@ -4,16 +4,16 @@ import { PRODUCT_LIST, SET_PRODUCT_LIST, SEARCH_PRODUCT } from '../constant/cons
 // takeEvery - Listens for specific actions
 // put - Dispatches a new action to Redux after handling the side effect.
 function* getProducts() {
-    //Calls the FakeStore API
+    // Calls the FakeStore API
     let data = yield fetch('https://fakestoreapi.com/products');
-    //Converts the API response (JSON format)
+    // Converts the API response (JSON format)
     data = yield data.json(); 
     // Dispatches an action to update the Redux store
     yield put({ type: SET_PRODUCT_LIST, data })
 }
 
 function* SearchProducts(action) {
-    //Fetches all products from the API.
+    // Fetches all products from the API.
     let allProducts = yield fetch("https://fakestoreapi.com/products");
     allProducts = yield allProducts.json();
 

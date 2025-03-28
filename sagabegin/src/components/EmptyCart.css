@@ -1,0 +1,45 @@
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .cart-image {
+    width: 250px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: rgb(85, 83, 83);
+  }
+
+  .dark-mode h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    color:azure;
+  }
+  
+  .dark-mode p {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .shop-button {
+    background-color: #ff9900;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  .shop-button:hover {
+    background-color: #ff8800;
+  }
+  

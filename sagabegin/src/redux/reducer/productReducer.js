@@ -10,4 +10,3 @@ export const productData = (data = [], action) => {
             return data; // product list not be empty
     }
 }
-

@@ -40,3 +40,24 @@
 .Notfound button:hover {
     background-color: #e68900;
 }
+
+.dark-mode .Notfound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #1b1b1b;
+}
+.dark-mode .Notfound h2{
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.dark-mode .Notfound p {
+    margin-top: 1px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}

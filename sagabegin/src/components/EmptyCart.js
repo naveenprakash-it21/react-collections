@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./EmptyCart.css";
+import "../styles/EmptyCart.css";
 
 const EmptyCart = () => {
   return (
@@ -9,7 +9,7 @@ const EmptyCart = () => {
         alt="Empty Cart"
         className="cart-image"
       />
-      <h2>Your Amazon Cart is empty</h2>
+      <h2>Your NavCart Cart is empty</h2>
       <p>Shop today's deals and start adding items to your cart!</p>
       <Link to="/">
         <button className="shop-button">Shop Now</button>

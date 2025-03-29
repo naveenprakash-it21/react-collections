@@ -32,6 +32,26 @@
     flex-direction: column;
   }
   
+  .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-container input {
+    width: 100%;
+    padding-right: 40px; /* Make space for the icon */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+  }
+
+  
   input {
     padding: 10px;
     margin-bottom: 10px;
@@ -42,7 +62,7 @@
   
   .loginbutton {
     padding: 10px;
-    background: #4CAF50;
+    background: #090c09;
     color: white;
     border: none;
     border-radius: 5px;
@@ -51,7 +71,7 @@
   }
   
   button:hover {
-    background: #45a049;
+    background: #41a841;
   }
   
   .switch-auth {
@@ -61,3 +81,9 @@
     text-decoration: underline;
   }
   
+  .dark-mode .auth-box p{
+    color:#090c09;
+  }
+  .dark-mode .auth-box h2{
+    color:#090c09;
+  }

@@ -84,8 +84,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart, removeToCart, emptyCart } from "../redux/action/action";
 import ReactPaginate from "react-paginate";
-import './PaymentForm.css';
-import "./Cart.css"
+import '../styles/PaymentForm.css';
+import "../styles/Cart.css"
 import EmptyCart from "./EmptyCart";
 
 const Cart = () => {

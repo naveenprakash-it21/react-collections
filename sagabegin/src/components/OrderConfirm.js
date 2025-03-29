@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import "./OrderConfirm.css"
+import "../styles/OrderConfirm.css"
 
 const OrderConfirm = () => {
   return (

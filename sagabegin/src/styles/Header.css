@@ -1,200 +1,218 @@
-/* Header */
-.header {
-    background-color: #08085e;
-    height: 83px; /* Reduced height */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    position: relative;
-  }
-  
-  /* Header Buttons */
-.header-buttons {
+/* Header Container */
+.header-container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly; /* Ensures even spacing */ /* Prevents sticking to the right */
-  width: 200px; /* Ensures they don't collapse */
+  justify-content: space-between;
+  background-color: #0a0a45;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-  /* Logo */
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    white-space: nowrap;
-  }
-  
-  /* Search Box */
-  .search-box {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    width: 10px;
-    margin-top: 10px;
-  }
-
-  .search-box label{
-    color:aliceblue;
-    margin-top: -10px;
-    margin-right:10px;
-  }
-  
-  .search-input {
-    width: 100%;
-    max-width: 300px;
-    height: 35px;
-    padding: 1px 10px;
-    font-size: 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    transition: all 0.3s ease;
-    box-shadow: none; /* Removed extra shadow */
-  }
-
-  
-  /* Dark Mode Toggle */
-  .theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: white;
-    transition: color 0.3s ease;
-    margin-right: 90px;
-  }
-  
-  /* Cart */
-  .cart-div {
-    position: relative;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .cart-div {
-    width: 10px;
-    
-  }
-  
-  .cart-icon {
-    width: 30px;
-    height: 30px;
+/* Logo */
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
-  .cart-count {
-    background-color: red;
-    border-radius: 50%;
-    height: 18px;
-    width: 18px;
-    position: absolute;
-    top: -8px; /* Moves count to the top */
-    right: -8px; /* Moves count to the right */
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo:hover {
+  color: #f5a623;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #0a0a45;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-box .label h3 {
+  color: rgb(253, 253, 253);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 300px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Wrapper for Icons */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adjust space between icons */
+  position: relative; /* Ensure child elements align properly */
   }
 
-  
-  
-  /* Profile Section */
-.profile-section {
+/* Icon Styling */
+.icon-container {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   position: relative;
-  display: flex;
-  align-items: center;
+  background-color: #0a0a45;
+  z-index: 2; /* Keep icons above other elements */
+}
+
+.icon-container img {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-container:hover {
+  transform: scale(1.1);
+}
+
+/* Cart Icon */
+.cart-div {
+  position: relative;
+  cursor: pointer;
+  background: white;
+  background-color: #0a0a45;
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cart-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-weight: bold;
+}
+
+.theme-toggle-container {
+  position: absolute;
+  right: -50px; /* Adjust to move out from behind the profile icon */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3; /* Bring it above other icons */
 }
 
 .dark-mode .profile-dropdown p{
-  color:black;
+  color:black
+}
+/* Theme Toggle */
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 150px;
+  transition: background 0.3s;
+  position: relative;
+  z-index: 3; /* Ensure the theme toggle is on top */
 }
 
-/* Profile Button */
+/* Profile Section */
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
 .profile-btn {
-  width: 40px; /* Set fixed width */
-  height: 40px; /* Set fixed height */
-  padding: 5px; /* Adjust padding if needed */
-  border-radius: 50%; /* Circular button */
-  background: #727272;
+  background: white;
+  border: none;
+  font-size: 16px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .profile-btn:hover {
-  background: #727272;
-  width: 40px; /* Ensure it stays the same */
-  height: 40px;
-}
-
-.signout-btn:hover{
-  background-color:red;
+  background: #4262c2;
 }
 
 /* Profile Dropdown */
 .profile-dropdown {
+ 
   position: absolute;
-  top: 40px;
-  right: 0;
+  top: 50px;
+  right: 10px;
   background: white;
-  color: black;
-  padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  min-width: 150px;
-  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
-/* Logout Button */
-.profile-dropdown button {
-  background-color: red;
+.profile-dropdown p {
+  margin-top:10px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom:10px;
+}
+
+.signout-btn {
+  background: red;
   color: white;
   border: none;
   padding: 5px 10px;
-  margin-top: 5px;
-  margin-right: 5px;
   cursor: pointer;
-  border-radius: 5px;
-  width: 50%;
+}
+
+.dark-mode .signout-btn {
+  background: #d32f2f;
 }
 
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .search-box {
-        max-width: 250px;
-    }
-  
-    .search-input {
-        height: 30px;
-        font-size: 12px;
-    }
-  
-    .cart-icon {
-        width: 25px;
-    }
+.signout-btn:hover {
+  background: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
   }
-  
-  @media (max-width: 480px) {
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-  
-    .search-box {
-        width: 90%;
-        margin: 5px 0;
-    }
-  
-    .header-buttons {
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-evenly;
-    }
+
+  .search-box input {
+      width: 180px;
   }
-  
+
+  .icon-wrapper {
+      margin: 5px 0;
+  }
+}

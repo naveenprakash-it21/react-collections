@@ -61,7 +61,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { productSearch } from "../redux/action/productAction";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { auth } from "../firebaseConfig";  // Import Firebase authentication
 import { signOut } from "firebase/auth";
 import "../styles/Header.css";
@@ -70,6 +70,19 @@ export const Header = () => {
     const result = useSelector((state) => state.cartData);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const profileRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+          if (profileRef.current && !profileRef.current.contains(event.target)) {
+            setShowProfile(false);
+          }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, []);
 
     const [darkMode, setDarkMode] = useState(
         localStorage.getItem("theme") === "dark"
@@ -105,13 +118,17 @@ export const Header = () => {
     };
 
     return (
-        <div className="header">
-            <Link to="/">
-                <h1 className="logo">E - NavCart</h1>
-            </Link>
+        <div className="header-container">
+            {/* Logo */}
+            <div className="header">
+                <Link to="/">
+                    <h1 className="logo">E - NavCart</h1>
+                </Link>
+            </div>
 
+            {/* Search Box */}
             <div className="search-box">
-                <label id="search"><h3>Search: </h3></label>
+                <label className="label" htmlFor="search"><h3>Search:</h3></label>
                 <input
                     type="text"
                     id="search"
@@ -120,39 +137,45 @@ export const Header = () => {
                 />
             </div>
 
-            <Link to="/cart">
-                <div className="cart-div">
-                    {result.length > 0 && (
-                        <span className="cart-count">{result.length}</span>
-                    )}
-                    <img src="titleicon.png" alt="Cart" className="cart-icon" />
+            {/* Icons Section */}
+            <div className="icon-wrapper">
+                {/* Cart Icon */}
+                <div className="icon-container">
+                    <Link to="/cart">
+                        <div className="cart-div">
+                            {result.length > 0 && <span className="cart-count">{result.length}</span>}
+                            <img src="titleicon.png" alt="Cart" className="cart-icon" />
+                        </div>
+                    </Link>
                 </div>
-            </Link>
 
-            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
-                {darkMode ? "☀️" : "🌙"}
-            </button>
+                {/* Theme Toggle */}
+                <div className="icon-container">
+                    <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)}>
+                        {darkMode ? "☀️" : "🌙"}
+                    </button>
+                </div>
 
-            {/* Profile Section */}
-            <div className="profile-section">
-                {user ? (
-                    <div className="profile-container">
-                        <button className="profile-btn" onClick={() => setShowProfile(!showProfile)}>
-                            👤
-                        </button>
-                        {showProfile && (
-                            <div className="profile-dropdown">
-                                <p>{user.email}</p>
-                                <button className="signout-btn" onClick={handleLogout}>Logout</button>
-                            </div>
-                        )}
-                    </div>
-                ) : (
-                    <button className="login-btn" onClick={() => navigate("/auth")}></button>
-                )}
+                {/* Profile Section */}
+                <div className="icon-container">
+                    {user ? (
+                        <button className="profile-btn" onClick={() => setShowProfile(!showProfile)}>👤</button>
+                    ) : (
+                        <button className="login-btn" onClick={() => navigate("/auth")}>Login</button>
+                    )}
+
+                    {/* Profile Dropdown */}
+                    {showProfile && user && (
+                    <div ref={profileRef} className="profile-dropdown">
+                            <p>{user.email}</p>
+                            <button className="signout-btn" onClick={handleLogout}>Logout</button>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
 };
+
 
 export default Header;

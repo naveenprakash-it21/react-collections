@@ -5,27 +5,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
   
-/* .loader-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-} */
 .preloader {
     display: flex;
     flex-direction: column;
@@ -247,6 +226,7 @@ button:hover {
     color: #161617;
     cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .dark-mode .pagination__link {
@@ -259,13 +239,26 @@ button:hover {
 }
 
 .pagination__link:hover {
-    background-color: #59bdf3;
+    background-color: #142475;
     color: white;
     transition: background 0.3s;
 }
 
 .pagination__link--active {
-    background-color: #007bff;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2626e8; /* Your desired blue color */
     color: white;
     font-weight: bold;
+    border-radius: 50%; /* Make it circular */
+    border: 2px solid #1a1ae6; /* Slightly darker border for depth */
+    box-shadow: 0px 4px 8px rgba(74, 74, 236, 0.5); /* Glow effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+.pagination__link--active:hover {
+    transform: scale(1.6); /* Slight zoom effect on hover */
 }
